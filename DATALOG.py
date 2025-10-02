@@ -102,6 +102,19 @@ GROUPNAME,SHORTCUTTAG.Val_OutDataLink,REAL,Periodic,1,Second,,,,,,
 GROUPNAME,SHORTCUTTAG.Val_SpeedFdbk,REAL,Periodic,1,Second,,,,,,
 GROUPNAME,SHORTCUTTAG.Val_SpeedRef,REAL,Periodic,1,Second,,,,,,
 """,
+    'P_PFXXX': """\
+GROUPNAME,SHORTCUTTAG.Sts_BypActive,BOOL,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Sts_IntlkTrip,BOOL,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Sts_Oper,BOOL,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Sts_Prog,BOOL,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Val_Fault,DINT,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Val_LastFaultCode,DINT,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Val_Sts,DINT,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Val_OutCurrent,REAL,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Val_OutPower,REAL,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Val_SpeedFdbk,REAL,Periodic,1,Second,,,,,,
+GROUPNAME,SHORTCUTTAG.Val_SpeedRef,REAL,Periodic,1,Second,,,,,,
+""",
 
 
 
