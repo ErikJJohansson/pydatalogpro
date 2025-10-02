@@ -2,6 +2,7 @@ from pycomm3 import LogixDriver
 from sys import argv
 import argparse
 import DATALOG
+from itertools import product
 
 
 def generate_datalog_tags(template, groupname, shortcut, tag):
@@ -56,8 +57,9 @@ def main():
     
     # Add command-line arguments
     parser.add_argument('commpath', help='Path to PLC')
-    parser.add_argument('deviceshortcut', nargs='?', default=default_deviceshortcut,help='Shortcut in FTView')
     parser.add_argument('taggroup', nargs='?', default=default_groupname,help='Group to store tags in')
+    parser.add_argument('deviceshortcut', nargs='?', default=default_deviceshortcut,help='Shortcut in FTView')
+
 
     # parse arguments
     args = parser.parse_args()
@@ -88,17 +90,26 @@ def main():
         print('No FTView device shortcut specified. Using PLC name. Path is: ' + device_shortcut)
 
 
-    # loop through AOIs
-    for aoi_type in DATALOG.DATALOG_LIST:
-        aoi_instance_list = get_aoi_tag_instances(plc, aoi_type)
+    print("Creating CSV of tags.")
 
-        for aoi_instance in aoi_instance_list:
-            print(aoi_instance)
+    filename = plc_name + '_DataLogProTags.csv'
+    # Write to file
+    with open(filename, 'w') as file:
+        file.write(DATALOG.DATALOG_TEMPLATE)
+
+        # loop through AOIs
+        for aoi_type in DATALOG.DATALOG_LIST:
+            aoi_instance_list = get_aoi_tag_instances(plc, aoi_type)
+
+            for aoi_instance in aoi_instance_list:
+                file.write(generate_datalog_tags(DATALOG.DATALOG_DEFINITIONS[aoi_type],taggroup,device_shortcut,aoi_instance))
 
 
 
 
     plc.close()
+
+    print('Done!')
 
 
 if __name__ == "__main__":
