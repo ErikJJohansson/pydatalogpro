@@ -1,0 +1,8 @@
+Version
+V14.0,THIS LINE CONTAINS VERSION INFORMATION. DO NOT REMOVE!!!
+Group Name,Tag Name,Tag Type,Trigger Type,Interval Value,Interval Unit,Maximum updateRate Value,Maximum updateRate Unit,Deadband Mode,Deadband Value,HeartbeatRate Value,HeartbeatRate Unit,
+WTP,/DATA::[WTP]XXX.SrcQ,DINT,Periodic,1,Second,,,,,,
+WTP,/DATA::[WTP]XXX.Val,REAL,Periodic,1,Second,,,,,,
+WTP,/DATA::[WTP]XXX.Val_Fault,DINT,Periodic,1,Second,,,,,,
+WTP,/DATA::[WTP]XXX.Val_InpPV,REAL,Periodic,1,Second,,,,,,
+WTP,/DATA::[WTP]XXX.Val_Dev,REAL,Periodic,1,Second,,,,,,
